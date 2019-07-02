@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Join Meals{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+<h1> Join Meal </h1>
+	{%	for user in g.mealDict  %}
+
+	<div>
+		<h2 style="font-size:200% ;margin-left:500px">  {{user}}  </h2>
+
+        <table class="tab">
+            <thead>
+            <tr>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Price</th>
+                <th>Seats Available</th>
+                <th>Type</th>
+                <th>Details</th>
+            </tr>
+            </thead>
+        {% for item in g.mealDict[user] %}
+            <tbody>
+            <tr>
+                <td>{{item.startTime}}</td>
+                <td>{{item.endTime}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.seatAvail}}</td>
+                <td>{{item.type}}</td>
+                <td> <a href="{{url_for('buyer.meal',id=item.buffetNo)}}">View Details</a> </td>
+            </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+    </div>
+	{%	endfor	%}
+
+{% endblock %}

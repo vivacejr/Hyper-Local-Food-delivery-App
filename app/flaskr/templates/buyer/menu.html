@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Order Food now{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+	<h1 style="margin-left: 50%"> {{ g.seller }} </h1>
+	<div class="forms">
+	<form method="post">
+		<table>
+			<tr>
+				<th>Dish Name</th>
+				<th>Price</th>
+				<th>Quantity</th>
+				<th>Description</th>
+				<th>Type</th>
+			</tr>
+		{%	for item in g.userDish	%}
+		    <tr><td> {{item.name}}</td><td> {{item.price}}</td> <td> {{item.qAvail}} </td> <td>{{item.description}} </td> <td>{{item.type}}</td> <td> <input type="checkbox" name="name"  value={{item.name}} > </td></tr>
+		 {%	endfor	%}
+		</table>
+	<label for="qty">Quantity</label>
+	<input type="number" name="qty" value="qty">
+	<input type="submit" value="Confirm buying">
+	</form>
+	</div>
+{% endblock %}

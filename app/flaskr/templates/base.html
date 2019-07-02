@@ -1,0 +1,39 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - FoodCreff</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<div class = "base">
+<nav>
+  <ul class="nav">
+    {% if g.user %}
+      <!-- <li><span>{{ g.user['username'] }}</span> -->
+        <div><li style="float:left;font-size:120%"><a href="{{ url_for('index') }}">FoodCreff</a></div>
+        <div><li><a href="{{ url_for('auth.logout') }}">Log Out</a></div>
+        <div><li><a href="{{ url_for('auth.profile') }}">Profile</a></div>
+        <div><li><a href="{{ url_for('dish.addDish') }}">Add Dish</a></div>
+        <div><li><a href="{{ url_for('dish.mydishes') }}">My Dishes</a></div>
+        <div><li><a href="{{ url_for('dish.sell') }}">Sell Items</a></div>
+        <div><li><a href="{{ url_for('dish.salelist') }}">Items On Sale</a></div>
+        <div><li><a href="{{ url_for('dish.mealInvites') }}">Meal Invite</a></div>
+        <div><li><a href="{{ url_for('buyer.joinMeal') }}">Join Meal</a></div>
+        <div><li><a href="{{ url_for('order_buyer.myMeal') }}">My Meals</a></div>
+        <div><li><a href="{{ url_for('buyer.order') }}">Order Food</a></div>
+        <div><li><a href="{{ url_for('order_buyer.view') }}">Orders Placed</a></div>
+        <div><li><a href="{{ url_for('order_seller.view') }}">Order Notification</a> </li></div>
+    {% else %}
+      <div><li><a href="{{ url_for('auth.register') }}">Register</a></div>
+      <div><li><a href="{{ url_for('auth.login') }}">Log In</a></div>
+    {% endif %}
+  </ul>
+</nav>
+</div>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  <body>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+  </body>
+</section>

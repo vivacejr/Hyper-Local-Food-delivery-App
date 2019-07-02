@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<div class="profile">
+    <h1>{% block title %}Profile{% endblock %}</h1>
+    <h5>
+        Username : {{g.user["username"]}}
+        <br>
+        Name : {{g.user["name"]}}
+        <br>
+        Address: {{g.user["address"]}}
+        <br>
+        Locality: {{g.user["locality"]}}
+        <br>
+        Contact No. : {{g.user["contact"]}}
+        <br>
+    </h5>
+</div>
+{% endblock %}

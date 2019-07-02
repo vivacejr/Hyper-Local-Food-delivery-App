@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}My Meals{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h1> My Meals</h1>
+<h2>
+    <table class="tab">
+        <thead>
+            <tr>
+                <th>Inviter Name</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in g.myMeals %}
+            <tr>
+                <td>{{item.invName}}</td>
+                <td>{{item.time}}</td>
+                <!-- <td><a href="{{url_for('dish.mealMenu',id=item.buffetNo)}}">View Details</a></td> -->
+            </tr>
+        {% endfor %}
+        </tbody >
+    </table>
+</h2>
+{% endblock %}

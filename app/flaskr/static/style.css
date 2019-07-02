@@ -1,0 +1,165 @@
+ body {
+ /*background-image: url("~");*/
+ background-color: skyblue;
+}
+div.base{
+  position: absolute;
+  top:0%;
+  left:0%;
+  display:block;
+  height: 0%;
+  width: 100%;
+  /*padding: 0px 0px 0px 0px*/
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: red;
+} 
+
+div.profile{
+  position:absolute;
+  top:35.7%;
+  right:0%;
+  align-items: center;  
+  margin-top:-300px; /* this is half the height of your div*/  
+  margin-left:-100px; 
+  background-color:Red ;
+  border: 2 px solid black;
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 100px 150px 600px 100px
+}
+.tab {
+    background-color: white;  
+    position: centre; 
+    /*left:40%;*/
+    /*top:10%;*/
+    border: solid 1px #DDEEEE;
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 33px Arial, sans-serif;
+}
+.tab thead th{
+    background-color:Black  ;
+    border: solid 1px #DDEEEE;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    /*text-shadow: 1px 1px 1px #fff;*/
+}
+.tab tbody td {
+    border: solid    ;
+    color: Black;
+    padding: 10px;
+}
+
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=password ], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number ], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=checkbox ], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div.forms {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  left:40%;
+  top:10%;
+  font-size: 35px;
+}
+div.meals{
+  position:absolute;
+  top:35.7%;
+  right:33%;
+  /*align-self: center;*/
+  /*align-items: center;  */
+  margin-top:-300px; /* this is half the height of your div*/  
+  margin-left:-100px; 
+  background-color:Red ;
+  border: 2 px solid black;
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 10px 150px 100px 100px
+}
+
+div.last{
+  position:absolute;
+  top:35.7%;
+  left:0%;
+  /*align-self: center;*/
+  /*align-items: center;  */
+  margin-top:-300px; /* this is half the height of your div*/  
+  margin-left:-100px; 
+  background-color:Red ;
+  border: 2 px solid black;
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 10px 150px 100px 100px
+}

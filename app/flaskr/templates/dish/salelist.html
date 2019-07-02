@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Onsale{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h1>Items on Sale</h1>
+<table class="tab">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th>Quantity remaining</th>
+        <th>Type</th>
+        <th>Price</th>
+    </tr>
+    </thead>
+    {% for item in g.sellList %}
+    <tbody>
+    <tr>
+        <td>{{item.name}}</td>
+        <td>{{item.description}}</td>
+        <td>{{item.readyTime}}</td>
+        <td>{{item.sellingTill}}</td>
+        <td>{{item.qAvail}}</td>
+        <td>{{item.type}}</td>
+        <td>{{item.price}}</td>
+    </tr>
+        </tbody>
+    {% endfor %}
+</table>
+{% endblock %}

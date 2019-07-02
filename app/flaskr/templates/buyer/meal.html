@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Join a Meal{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+    <div class="meals">
+        <h2>    
+            MEAL DETAILS
+        </h2>
+        <h4>
+            Inviter : {{g.meal["inviterName"]}}
+            <br>
+            Price/person : {{g.meal["price"]}}
+            <br>
+            Start time : {{g.meal["startTime"]}}
+            <br>
+            End time : {{g.meal["endTime"]}}
+            <br>
+            Type : {{g.meal["type"]}}
+            <br>
+            Seats Available : {{g.meal["seatAvail"]}}
+        </h4>
+        <h3>
+            MENU:
+        </h3>
+            {% for item in g.Menu %}
+                {{item.itemName}} : {{item.type}}<br>
+            {% endfor %}
+        <form method="POST">
+        <label for="seats" > No. of Seats </label><input type="number" name="seats" id="seats" required>
+        <br>
+        <input type="submit" value="Confirm Booking">
+        </form>
+    </div>
+{% endblock %}

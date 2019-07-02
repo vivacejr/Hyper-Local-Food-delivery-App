@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Register{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h1> Sell Items</h1>
+<div class="forms">
+  <form method="post">
+    {% for item in g.dishList %}
+        <label>{{item.name}} <input type="checkbox" name="name"  value={{item.name}} > </label>
+    {% endfor %}
+    <label for="quantity">  Quantity</label><input type="number" name="quantity" id="quantity"  >
+     <label for="stime">  Start time </label><input type="number" name="stime" id="stime"  >
+    <label for="etime">  End time</label><input type="number" name="etime" id="etime"  >
+    <input type="submit" value="Add in my selling list">
+  </form>
+</div>
+{% endblock %}

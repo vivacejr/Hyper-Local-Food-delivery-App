@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Order Details{% endblock %}</h1>
+{% endblock %}
+{% block content %}
+    <div>
+        <h2>OrderId : {{g.od.orderid}}
+        <br>
+        Buyer Name : {{g.od.buyerName}}
+        <br>
+        Status : {{g.od.status}}
+        <br>
+        price : {{g.od.price}}
+        <br>
+        date : {{g.od.date}}
+        <br>
+        time : {{g.od.time}}
+        <br>
+        Items:
+        </h2>
+        <table class="tab">
+            <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in g.Dishes %}
+            <tr>
+                <td>{{item.itemName}}</td>
+                <td>{{item.qty}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% if g.od.status == 'Pending' %}
+        <div class="forms">
+        <form method="POST">
+            <label>Accept Order<input type="checkbox" name="decision" value="accept"></label>
+            <label>Reject Order<input type="checkbox" name="decision" value="reject"></label>
+            <input type="submit" value="submit">
+        </form>
+        </div>
+        {% endif %}
+    </div>
+
+{% endblock %}
